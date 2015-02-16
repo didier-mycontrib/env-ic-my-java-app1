@@ -1,7 +1,7 @@
 package com.mycompany.app1;
 
 /**
- * Calculateur ***
+ * Calculateur ****
  *
  */
 public class Calculateur 
