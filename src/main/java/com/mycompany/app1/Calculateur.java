@@ -7,7 +7,7 @@ package com.mycompany.app1;
 public class Calculateur 
 {
     public double add(double a,double b){
-      return a+b;
+      return a+b+1;
     }
     
     public double mult(double a,double b){
