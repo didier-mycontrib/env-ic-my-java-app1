@@ -1,9 +1,13 @@
 package com.mycompany.app1;
 
+import org.hamcrest.Description;
+import org.hamcrest.Matcher;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.Mockito;
+
+import com.mycompany.app1.matcher.MyDoubleBetween;
 
 
 public class UserLoginMockTest {
@@ -13,12 +17,12 @@ public class UserLoginMockTest {
     @BeforeClass
     public static void init(){
     	//userLogin=new UserLoginImpl();
-    	//userLogin = Mockito.mock(UserLogin.class);
+    	userLogin = Mockito.mock(UserLogin.class);
     	//userLogin = Mockito.mock(UserLoginImpl.class);
-    	userLogin = Mockito.spy(new UserLoginImpl());
+    	//userLogin = Mockito.spy(new UserLoginImpl());
     }
     
-    @Test 
+    //@Test 
     public void verifyCall(){
 			userLogin.setSize(20); 
 			//userLogin.getAuteur();
@@ -43,6 +47,7 @@ public class UserLoginMockTest {
 			//Mockito.doNothing().when(userLogin).setSize(Mockito.anyInt());
 			Mockito.doThrow(new IllegalArgumentException()).when(userLogin).setSize(Mockito.eq(-1));
 			userLogin.setSize(20);
+			//Mockito.when(userLogin.getSize()).thenReturn(20);
 			int taille = userLogin.getSize();
 			System.out.println("taille="+taille);
 			//Mockito.when(userLogin.getSize()).thenCallRealMethod();
@@ -50,7 +55,11 @@ public class UserLoginMockTest {
 			//userLogin.setSize(20);
 			//taille = userLogin.getSize();
 			//System.out.println("taille="+taille);
+			//Mockito.when(userLogin.getDoubleValue(Mockito.anyDouble())).thenReturn(10.5);
 			
+			
+			Mockito.when(userLogin.getDoubleValue(Mockito.doubleThat(new MyDoubleBetween(2,10)))).thenReturn(5.0);
+			Mockito.when(userLogin.getDoubleValue(Mockito.doubleThat(new MyDoubleBetween(10,20)))).thenReturn(15.0);
 			double  val = userLogin.getDoubleValue(3.2);
 			System.out.println("val="+val);
 		} catch (Exception e) {

@@ -18,9 +18,9 @@
   
  <!-- nouvelle version git --> 
    <scm>
-    <connection>scm:git:file:///media/sf_ext/tp/local-git-repositories/env-integration-continue</connection>
-    <developerConnection>scm:git:file:///media/sf_ext/tp/local-git-repositories/env-integration-continue</developerConnection>
-    <url>file:///media/sf_ext/tp/local-git-repositories/env-integration-continue</url>
+    <connection>scm:git:file:///media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1</connection>
+    <developerConnection>scm:git:file:///media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1</developerConnection>
+    <url>file:///media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1</url>
     <tag>HEAD</tag>
   </scm>
   
