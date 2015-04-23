@@ -18,6 +18,7 @@ cd ..
 #        and deploy the release version in the maven repo (ex: nexus) via mvn deploy )
 #      * update to new developpement version in the pom
 #      * commit in SCM 
-mvn release:prepare
+mvn -B release:prepare
+# -B or --batch-mode is for non interactive mode
 echo "fin?" ; read fin
 
