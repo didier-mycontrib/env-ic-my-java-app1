@@ -18,8 +18,8 @@
   
  <!-- nouvelle version git --> 
    <scm>
-    <connection>scm:git:file:///media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1</connection>
-    <developerConnection>scm:git:file:///media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1</developerConnection>
+    <connection>scm:git:file:///home/formation/Bureau/tp/local-scm/git/git-file/env-ic-my-java-app1.git</connection>
+    <developerConnection>scm:git:file:///home/formation/Bureau/tp/local-scm/git/git-file/env-ic-my-java-app1.git</developerConnection>
     <url>file:///media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1</url>
     <tag>HEAD</tag>
   </scm>
