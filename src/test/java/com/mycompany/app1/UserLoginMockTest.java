@@ -69,7 +69,7 @@ public class UserLoginMockTest {
     
     @Test
     public void testVerifyLogin()
-    {   //Mockito.when(userLogin.verifyLogin("toto", "pwd_toto")).thenReturn(true);
+    {   Mockito.when(userLogin.verifyLogin("toto", "pwd_toto")).thenReturn(true);
     	
     	boolean pwdOk= userLogin.verifyLogin("toto", "pwd_toto");
         //System.out.println("pwdOk="+pwdOk);
@@ -77,13 +77,13 @@ public class UserLoginMockTest {
         
       
         
-        Assert.assertFalse( userLogin.verifyLogin("toto", "wrong_pwd") );
+        //Assert.assertFalse( userLogin.verifyLogin("toto", "wrong_pwd") );
     }
     
     @Test
     public void testgoodPassword()
     {
-    	//Mockito.when(userLogin.goodPasswordForUser("toto")).thenReturn("pwd_toto");
+    	Mockito.when(userLogin.goodPasswordForUser("toto")).thenReturn("pwd_toto");
     	
     	String goodPwd= userLogin.goodPasswordForUser("toto");
     	//System.out.println("goodPwd="+goodPwd);
