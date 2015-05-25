@@ -1,0 +1,34 @@
+package com.mycompany.app1.tp;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
+public class TestServiceTauxCourants {
+	
+	private static Logger logger = LoggerFactory.getLogger(TestServiceTauxCourants.class);
+	private ServiceTauxCourants serviceTauxCourants; //à tester
+	
+	@Before
+	public void initServiceATester(){
+		serviceTauxCourants=new ServiceTauxCourantsBean();
+	}
+	
+	@Test
+	public void testTauxMensPctCourant(){
+		double tauxMensPctCourant=serviceTauxCourants.tauxMensPctCourant(48);
+		logger.trace("pour  48 mois , tauxCourant = " + tauxMensPctCourant);
+		Assert.assertEquals(0.12, tauxMensPctCourant , 0.0001);
+	}
+	
+	@Test
+	public void testFraisDossier(){
+		double fraisD = serviceTauxCourants.fraisDossier(10000);
+		logger.trace("pour  10000 euros , fraisDossier = " + fraisD);
+		Assert.assertEquals(10000 / 500, fraisD , 0.0001);
+	}
+
+}
