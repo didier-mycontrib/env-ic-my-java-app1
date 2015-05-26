@@ -3,7 +3,7 @@ package com.mycompany.app1;
 import java.util.Scanner;
 
 /**
- * App 1
+ * App 1 *
  *
  */
 public class App 
