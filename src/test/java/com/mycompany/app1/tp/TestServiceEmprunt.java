@@ -23,8 +23,13 @@ public class TestServiceEmprunt {
 	public void initTestServiceEmprunt(){
 		//créer l'instance du service à tester:
 		
-		//créer une doublure (en mode "mock" puis "spy") du sous composant "ServiceTauxCourants":
-		
+		//créer une doublure (en mode "mock") du sous composant "ServiceTauxCourants":		
+		//Rappel : sémantiquement mock = "stub + spy"
+		//         pragmatiquement pas de différence notable entre Mockito.mock() et Mockito.spy() en partant d'une interface
+		//         car si pas de code d'implémentation ---> toujours comportement "mock=stub+spy" .
+		//         si par contre Mockito.spy() est appelé en partant d'une réelle instance de composant
+		//         alors spy --> espionnage seulement pour ultérieur "verify" sans changer comportement de l'application
+		//         et   mock (= stub + spy)--> verify possible ET implementation de départ écrasée par Mockito.when().then...
 		
 		
 		//relier le sous composant (ici la doublure gérée par Mockito) au service à tester:
@@ -44,7 +49,7 @@ public class TestServiceEmprunt {
 		//3. vérifier la valeur de retour via une assertion JUnit:
 		//Assert.assertTrue(mensualite > 20000.0 / 120 ); //ou assertion plus précise
 		
-		//4. (en mode "spy" / seconde phase du tp) , vérifier les sous appels effectués
+		//4. (avec verify / seconde phase du tp) , vérifier les sous appels effectués
 		// du composant "ServiceEmprunts" vers le sous composant "ServiceTauxCourants".
 		//vérifier que la méthode tauxMensPctCourant() a été appelée avec nbMois=120
 		//.....
@@ -55,7 +60,7 @@ public class TestServiceEmprunt {
 	@Test
 	public void testMensualiteConstanteAvecException(){
 		//1. paramétrer le comportement de la doublure du sous composant géré par Mockito:
-		//   remonter l'execption IllegalArgumentException("nbMois doit etre supérieur à 0") si nbMois est négatif (ex: -10)
+		//   remonter l'exception IllegalArgumentException("nbMois doit etre supérieur à 0") si nbMois est négatif (ex: -10)
 		//Mockito.when(.....).thenThrow(....);
 		
 		

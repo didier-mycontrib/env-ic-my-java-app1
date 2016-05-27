@@ -24,8 +24,14 @@ public class TestServiceEmprunt {
 		//créer l'instance du service à tester:
 		serviceEmprunts = new ServiceEmpruntsBean();
 		//créer une doublure (en mode "mock" ou "spy") du sous composant "ServiceTauxCourants":
-		//serviceTauxCourants = Mockito.mock(ServiceTauxCourants.class);
-		serviceTauxCourants = Mockito.spy(ServiceTauxCourants.class);
+		serviceTauxCourants = Mockito.mock(ServiceTauxCourants.class); 
+		//serviceTauxCourants = Mockito.spy(ServiceTauxCourants.class); 
+		//Rappel : sémantiquement mock = "stub + spy"
+		//         pragmatiquement pas de différence notable entre Mockito.mock() et Mockito.spy() en partant d'une interface
+		//         car si pas de code d'implémentation ---> toujours comportement "mock=stub+spy" .
+		//         si par contre Mockito.spy() est appelé en partant d'une réelle instance de composant
+		//         alors spy --> espionnage seulement pour ultérieur "verify" sans changer comportement de l'application
+		//         et   mock (= stub + spy)--> verify possible ET implementation de départ écrasée par Mockito.when().then... 
 		
 		//relier le sous composant (ici la doublure gérée par Mockito) au service à tester:
 		((ServiceEmpruntsBean)serviceEmprunts).setServiceTauxCourants(serviceTauxCourants);
@@ -43,7 +49,7 @@ public class TestServiceEmprunt {
 		//3. vérifier la valeur de retour via une assertion JUnit:
 		Assert.assertTrue(mensualite > 20000.0 / 120 ); //ou assertion plus précise
 		
-		//4. (en mode "spy" / seconde phase du tp) , vérifier les sous appels effectués
+		//4. (avec verify / seconde phase du tp) , vérifier les sous appels effectués
 		// du composant "ServiceEmprunts" vers le sous composant "ServiceTauxCourants".
 		//vérifier que la méthode tauxMensPctCourant() a été appelée avec nbMois=120
 		Mockito.verify(serviceTauxCourants).tauxMensPctCourant(120);

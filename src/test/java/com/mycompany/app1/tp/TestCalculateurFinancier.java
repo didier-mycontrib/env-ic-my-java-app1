@@ -2,6 +2,7 @@ package com.mycompany.app1.tp;
 
 
 
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +22,7 @@ public class TestCalculateurFinancier {
 	}
 	
 	//annotation qui va bien
+	@Test
 	public void testMontantGlobalInterets(){
 		double montantTotalInterets = 0;
 		// appel de méthode qui va bien ;

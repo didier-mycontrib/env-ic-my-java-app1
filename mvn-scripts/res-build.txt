@@ -1,0 +1,26 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building my-java-app1 1.14-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-scm-plugin:1.9.4:checkin (default-cli) @ my-java-app1 ---
+[INFO] Executing: /bin/sh -c cd /media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1 && git rev-parse --show-toplevel
+[INFO] Working directory: /media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1
+[INFO] Executing: /bin/sh -c cd /media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1 && git status --porcelain .
+[INFO] Working directory: /media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1
+[WARNING] Ignoring unrecognized line: ?? mvn-scripts/res-build.txt
+[WARNING] Ignoring unrecognized line: ?? pom.xml~
+[INFO] Executing: /bin/sh -c cd /media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1 && git commit --verbose -F /tmp/maven-scm-1896072952.commit -a
+[INFO] Working directory: /media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1
+[INFO] Executing: /bin/sh -c cd /media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1 && git symbolic-ref HEAD
+[INFO] Working directory: /media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1
+[INFO] Executing: /bin/sh -c cd /media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1 && git push file:///home/formation/Bureau/tp/local-scm/git/git-file/env-ic-my-java-app1.git refs/heads/master:refs/heads/master
+[INFO] Working directory: /media/sf_ext/tp/local-git-repositories/env-ic-my-java-app1
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 11.086s
+[INFO] Finished at: Thu Apr 23 15:07:56 CEST 2015
+[INFO] Final Memory: 7M/18M
+[INFO] ------------------------------------------------------------------------
